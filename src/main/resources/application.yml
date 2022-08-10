@@ -1,4 +1,4 @@
-spring.datasource.url: jdbc:postgresql://localhost:5434/customers
+spring.datasource.url: jdbc:postgresql://localhost:5434/GPBTest?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
 spring.datasource.username: root
 spring.datasource.password: test
 
