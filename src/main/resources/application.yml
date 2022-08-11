@@ -1,7 +1,6 @@
-spring.datasource.url: jdbc:postgresql://localhost:5434/GPBTest?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
-spring.datasource.username: root
+spring.datasource.url: jdbc:postgresql://localhost:5434/postgres?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+spring.datasource.username: postgres
 spring.datasource.password: test
 
 spring.datasource.driver-class-name: org.postgresql.Driver
 spring.jpa.database: postgresql
-spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL10Dialect
