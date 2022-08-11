@@ -1,9 +1,11 @@
 package main.controller;
 
 import main.api.request.RegProductRequest;
+import main.api.response.ProductResponse;
 import main.api.response.RegResponse;
 import main.servise.ApiProductService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +21,9 @@ public class ProductController {
     @PostMapping("/api/product")
     public ResponseEntity<RegResponse> newProduct(@RequestBody RegProductRequest regProductRequest) {
         return ResponseEntity.ok(productService.getRegProductResponse(regProductRequest));
+    }
+    @GetMapping("/api/product")
+    public ResponseEntity<ProductResponse> productCurrant(){
+        return ResponseEntity.ok(productService.getCurrentProducts());
     }
 }
