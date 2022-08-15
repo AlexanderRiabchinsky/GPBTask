@@ -19,7 +19,7 @@ public class List {
     private String name;
 
     @ManyToMany(cascade = {CascadeType.ALL, CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinTable(name = "product2list`", joinColumns = {@JoinColumn(name = "list_id")},
+    @JoinTable(name = "product2list", joinColumns = {@JoinColumn(name = "list_id")},
             inverseJoinColumns = {@JoinColumn(name = "product_id")})
     private java.util.List<Product> products;
 }

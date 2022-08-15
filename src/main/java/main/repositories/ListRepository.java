@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface ListRepository extends JpaRepository<List,Long> {
     @Query(value = "SELECT * FROM product " +
             "JOIN product2list ON product.id = product2list.product_id " +
-            "JOIN list ON product2list.list_id = list.id" +
+            "JOIN list ON product2list.list_id = list.id " +
             "WHERE list.id = :listId", nativeQuery = true)
    java.util.List<Product> getProductsOfList(@Param("listId") long listId);
 }
