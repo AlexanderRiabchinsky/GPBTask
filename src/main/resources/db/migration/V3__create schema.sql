@@ -1,0 +1,10 @@
+INSERT INTO list(name) VALUES('light');
+INSERT INTO list(name) VALUES('heavy');
+INSERT INTO product2list(list_id, product_id) VALUES(1,6);
+INSERT INTO product2list(list_id, product_id) VALUES(1,7);
+INSERT INTO product2list(list_id, product_id) VALUES(2,1);
+INSERT INTO product2list(list_id, product_id) VALUES(2,2);
+INSERT INTO product2list(list_id, product_id) VALUES(2,3);
+INSERT INTO product2list(list_id, product_id) VALUES(2,4);
+INSERT INTO product2list(list_id, product_id) VALUES(2,5);
+INSERT INTO product2list(list_id, product_id) VALUES(2,7);

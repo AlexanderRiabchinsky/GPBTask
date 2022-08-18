@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.api.request.InsertListRequest;
 import main.api.request.RegListRequest;
 import main.api.response.ListResponse;
 import main.api.response.ProductResponse;
@@ -26,15 +27,16 @@ public class ListController {
     public ResponseEntity<RegResponse> newList(@RequestBody RegListRequest regListRequest) {
         return ResponseEntity.ok(listService.getRegListResponse(regListRequest));
     }
-    @PutMapping("/api/list/{id}")
-    public ResponseEntity<RegResponse> addProduct(@PathVariable long listId,@PathVariable long productId){
-        Optional<Product> optionalProduct = productRepository.findById(productId);
+    @PutMapping("/api/list")
+    public ResponseEntity<RegResponse> addProduct(@RequestBody InsertListRequest request){
+        Optional<Product> optionalProduct = productRepository.findById(request.getProductId());
         if (optionalProduct==null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        } else return ResponseEntity.ok(listService.addProductToList(listId,productId));
+        } else return ResponseEntity.ok(listService
+                .addProductToList(request.getListId(), request.getProductId()));
     }
     @GetMapping("/api/list/{id}")
-    public ResponseEntity<ListResponse> listCurrent(@PathVariable long listId){
-        return ResponseEntity.ok(listService.getCurrentList(listId));
+    public ResponseEntity<ListResponse> listCurrent(@PathVariable long id){
+        return ResponseEntity.ok(listService.getCurrentList(id));
     }
 }

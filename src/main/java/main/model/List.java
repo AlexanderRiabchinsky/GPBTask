@@ -18,7 +18,7 @@ public class List {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = {CascadeType.ALL, CascadeType.ALL},fetch = FetchType.LAZY)
+    @ManyToMany(cascade = {CascadeType.ALL, CascadeType.ALL},fetch = FetchType.EAGER)
     @JoinTable(name = "product2list", joinColumns = {@JoinColumn(name = "list_id")},
             inverseJoinColumns = {@JoinColumn(name = "product_id")})
     private java.util.List<Product> products;

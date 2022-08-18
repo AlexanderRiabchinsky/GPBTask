@@ -14,7 +14,7 @@ public class Product {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column(name = "name")
     private String name;
@@ -25,6 +25,6 @@ public class Product {
     @Column(name = "kcal")
     private long kcal;
 
-    @ManyToMany(mappedBy = "products",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "products",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<main.model.List> lists ;
 }
